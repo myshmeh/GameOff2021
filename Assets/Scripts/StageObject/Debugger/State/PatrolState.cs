@@ -19,18 +19,17 @@ namespace StageObject.Debugger.State
         {
             OnPlayerFound = null;
         }
-        
+
         private Context<DebuggerController> context;
         private Transform transform;
         private Vector3[] waypoints;
-        private float speed = 1f;
         private Transform player;
         private float sightDistance;
         private float sightAngle;
         private Light spotLight;
         private LayerMask obstacleMask;
         private Coroutine moveAlongPathsCoroutine = null;
-        
+
         public PatrolState(Context<DebuggerController> context)
         {
             this.context = context;
@@ -46,20 +45,31 @@ namespace StageObject.Debugger.State
         public void Enter()
         {
             if (moveAlongPathsCoroutine != null) return;
-            
+
             moveAlongPathsCoroutine = context.Client.StartCoroutine(MoveAlongPaths());
+        }
+
+        bool CollideWithDoor(Vector3 positionToMove)
+        {
+            return Physics.Linecast(transform.position, positionToMove, out RaycastHit _hitInfo) &&
+                   _hitInfo.collider.CompareTag("Door");
         }
 
         IEnumerator MoveAlongPaths()
         {
             transform.position = waypoints[0];
 
-            int _index = 1;
+            int _index = 1 % waypoints.Length;
             Vector3 _target = waypoints[_index];
             transform.LookAt(_target);
             while (true)
             {
-                transform.position = Vector3.MoveTowards(transform.position,  _target, speed * Time.deltaTime);
+                Vector3 _moveTowards = Vector3.MoveTowards(transform.position, _target, context.Client.speed * Time.deltaTime);
+
+                if (CollideWithDoor(_moveTowards))
+                    yield return new WaitUntil(() => !CollideWithDoor(_moveTowards));
+
+                transform.position = _moveTowards;
 
                 if (Mathf.Approximately(0f, (transform.position - _target).magnitude))
                 {
@@ -84,7 +94,7 @@ namespace StageObject.Debugger.State
         {
             if (Vector3.Distance(transform.position, player.position) > sightDistance)
                 return false;
-            
+
             Vector3 toPlayer = (player.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, toPlayer) > sightAngle * .5f)
                 return false;
@@ -95,17 +105,17 @@ namespace StageObject.Debugger.State
             PlayerController _playerController = player.GetComponent<PlayerController>();
             if (_playerController.CurrentStateName != "Moving")
                 return false;
-            
+
             return true;
         }
 
         bool CanSeeDecoy(DecoyController decoy)
         {
             Vector3 decoyPosition = decoy.transform.position;
-            
+
             if (Vector3.Distance(transform.position, decoyPosition) > sightDistance)
                 return false;
-            
+
             Vector3 toDecoy = (decoyPosition - transform.position).normalized;
             if (Vector3.Angle(transform.forward, toDecoy) > sightAngle * .5f)
                 return false;
@@ -114,7 +124,7 @@ namespace StageObject.Debugger.State
                 return false;
 
             if (!decoy.Alive) return false;
-            
+
             return true;
         }
 
@@ -122,7 +132,7 @@ namespace StageObject.Debugger.State
         {
             List<DecoyController> decoys = context.Client.decoys;
             DecoyController visibleDecoy = decoys.Where(CanSeeDecoy).FirstOrDefault();
-            
+
             if (visibleDecoy == null) return null;
             return visibleDecoy.transform;
         }

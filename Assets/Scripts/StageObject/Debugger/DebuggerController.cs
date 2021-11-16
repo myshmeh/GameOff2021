@@ -18,6 +18,8 @@ namespace StageObject.Debugger
         public Sight.Sight sight;
         public LayerMask obstacleMask;
         public List<DecoyController> decoys = new List<DecoyController>();
+        public float speed = .75f;
+        public float rechargeSeconds = 5f;
 
         private Context<DebuggerController> context;
         private Color primaryColor = Color.white;

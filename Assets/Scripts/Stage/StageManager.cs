@@ -11,32 +11,33 @@ namespace Stage
     public class StageManager : MonoBehaviour
     {
         public static event Action OnMissionComplete;
+        public static event Action OnMissionFailed;
 
-        [SerializeField] private float completeAwaitSeconds = 1f;
-        [SerializeField] private float failureAwaitSeconds = 1f;
         private ServerController[] serverControllers;
 
         [Watchable] private bool completed;
         [Watchable] private bool failed;
-
+        
         private void OnDestroy()
         {
             OnMissionComplete = null;
+            OnMissionFailed = null;
         }
         
-        IEnumerator WillFailStage()
+        void OnMissionFailedSafely()
         {
-            yield return new WaitForSeconds(failureAwaitSeconds);
-            
-            GameManager.Instance.OnStageFailed();
+            if (OnMissionFailed == null) return;
+            OnMissionFailed();
         }
 
         private void Start()
         {
             PatrolState.OnPlayerFound += () =>
             {
+                if (failed) return;
+                
                 failed = true;
-                StartCoroutine(WillFailStage());
+                OnMissionFailedSafely();
             };
 
             serverControllers = FindObjectsOfType<ServerController>();
@@ -48,13 +49,6 @@ namespace Stage
             OnMissionComplete();
         }
 
-        IEnumerator WillCompleteStage()
-        {
-            yield return new WaitForSeconds(completeAwaitSeconds);
-            
-            GameManager.Instance.OnStageCompleted();
-        }
-
         private void Update()
         {
             if (!ShouldBeCompleted()) return; 
@@ -62,7 +56,6 @@ namespace Stage
 
             completed = true;
             OnMissionCompleteSafely();
-            StartCoroutine(WillCompleteStage());
         }
 
         private bool ShouldBeCompleted() => ServerDownCount() == serverControllers.Length;

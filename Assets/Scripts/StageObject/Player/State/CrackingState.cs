@@ -15,6 +15,7 @@ namespace StageObject.Player.State
             this.context = context;
             serverController.Crack(() =>
             {
+                context.Client.RechargeDecoy();
                 context.PopState();
             });
         }

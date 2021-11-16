@@ -25,6 +25,11 @@ namespace StageObject.Player
             decoyCount -= 1;
         }
 
+        public void RechargeDecoy()
+        {
+            decoyCount = maxDecoyCount;
+        }
+
         public bool OutOfDecoy() => context.Client.DecoyCount <= 0;
 
         public int DecoyCount => decoyCount;
@@ -74,6 +79,16 @@ namespace StageObject.Player
         public void OnAttack()
         {
             context.PushState(new DeadState(context));
+        }
+
+        public void Freeze()
+        {
+            context.PushState(new FrozenState(context));
+        }
+
+        public void ChangeWithMovingState()
+        {
+            context.PushState(new MovingState(context));
         }
         
         public void TurnMovingModel(bool onoff)

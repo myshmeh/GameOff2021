@@ -7,7 +7,6 @@ namespace StageObject.Debugger.State.Attack
 {
     public class AttackState : IState
     {
-        private float rechargeSeconds = 2f;
         private Context<DebuggerController> context;
         private IAttackable target;
         private Vector3 targetPosition;
@@ -21,7 +20,7 @@ namespace StageObject.Debugger.State.Attack
 
         IEnumerator Recharge()
         {
-            yield return new WaitForSeconds(rechargeSeconds);
+            yield return new WaitForSeconds(context.Client.rechargeSeconds);
 
             context.PopState();
         }

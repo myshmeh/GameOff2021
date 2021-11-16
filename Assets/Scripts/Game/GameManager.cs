@@ -21,7 +21,7 @@ namespace Game
             SceneManager.LoadScene(_titleSceneIndex);
         }
 
-        void RevisitSameScene()
+        void RevisitCurrentScene()
         {
             int _currentStageSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(_currentStageSceneIndex);
@@ -39,7 +39,12 @@ namespace Game
 
         public void OnStageFailed()
         {
-            RevisitSameScene();
+            RevisitCurrentScene();
+        }
+
+        public void OnStageIntroCompleted()
+        {
+            print("onstageintrocompleted called");
         }
 
         public void OnEndingCompleted()

@@ -35,8 +35,13 @@ namespace StageObject.Player.State
             Transform playerModelRoot = context.Client.transform.GetChild(0);
             Quaternion quaternion = Quaternion.Euler(playerModelRoot.eulerAngles);
             var ins = GameObject.Instantiate(decoy, position, quaternion);
+            
+            var controller = ins.GetComponent<DecoyController>();
+            Vector3 meshForward = context.Client.transform.GetChild(0).forward;
+            controller.ThrowTo(meshForward);
 
-            OnDecoySpawned(ins.GetComponent<DecoyController>());
+            if (OnDecoySpawned != null)
+                OnDecoySpawned(controller);
 
             context.PopState();
         }

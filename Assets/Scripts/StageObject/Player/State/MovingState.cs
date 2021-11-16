@@ -1,3 +1,4 @@
+using System;
 using CMF;
 using StageObject.Server;
 using StateMachine.Context;
@@ -43,6 +44,7 @@ namespace StageObject.Player.State
                     if (hitInfo.collider.CompareTag("Server"))
                     {
                         ServerController _serverController = hitInfo.collider.GetComponent<ServerController>();
+                        if (_serverController == null) throw new Exception("ServerController not found");
                         context.PushState(new CrackingState(context, _serverController));
 
                         return;
