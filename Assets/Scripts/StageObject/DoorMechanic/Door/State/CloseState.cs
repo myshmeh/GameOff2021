@@ -16,17 +16,12 @@ namespace StageObject.DoorMechanic.Door.State
 
         void Close()
         {
-            var _transform = context.Client.transform;
-            var _position = _transform.position;
-            _position = new Vector3(
-                _position.x,
-                -1f,
-                _position.z);
-            _transform.position = _position;
+            context.Client.Animator.SetBool("IsOpen", false);
         }
         
         public void Enter()
         {
+            context.Client.GetComponent<BoxCollider>().enabled = false;
             Close();
         }
 

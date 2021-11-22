@@ -20,6 +20,8 @@ namespace StageObject.Debugger
         public List<DecoyController> decoys = new List<DecoyController>();
         public float speed = .75f;
         public float rechargeSeconds = 5f;
+        public Transform attackParticlesParent;
+        public ParticleSystem smokeParticle;
 
         private Context<DebuggerController> context;
         private Color primaryColor = Color.white;
@@ -31,6 +33,7 @@ namespace StageObject.Debugger
         void Makeup(Color color)
         {
             primaryColor = color;
+            BrandColor.SetupBrandColor(this, color);
             spotLight.color = primaryColor;
         }
 

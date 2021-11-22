@@ -51,14 +51,7 @@ namespace StageObject.DoorMechanic.Button
             if (!PlayerTagName(other)) return;
             AwaitingToUnpressedState();
         }
-
-        public void SetupBrandColor(Color color)
-        {
-            MeshRenderer _meshRenderer = GetComponentInChildren<MeshRenderer>();
-            Material _material = new Material(shader) {color = color};
-            _meshRenderer.material = _material;
-        }
-
+        
         public bool IsPressed()
         {
             return context.CurrentStateName == ButtonStateName.Pressed.ToString();

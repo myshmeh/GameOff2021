@@ -10,6 +10,8 @@ namespace UI.Dialogue
         [SerializeField] private float delaySeconds = 0f;
         [SerializeField] private float waitCommandSeconds = .5f;
         [SerializeField] private float waitResponseSeconds = 1f;
+        [SerializeField] private float waitAtTheEndSeconds = 1f;
+        [SerializeField] private float waitNextLetterSeconds = .1f;
         [SerializeField] private string targetTagName = "Player";
         [SerializeField] private bool freezePlayer = false;
 
@@ -33,7 +35,7 @@ namespace UI.Dialogue
                 playerController.Freeze();    
             }
 
-            animator.Animate(delaySeconds, waitCommandSeconds, waitResponseSeconds, _afterAnimation);
+            animator.Animate(delaySeconds, waitCommandSeconds, waitResponseSeconds, waitAtTheEndSeconds, waitNextLetterSeconds, _afterAnimation);
             triggered = true;
         }
     }

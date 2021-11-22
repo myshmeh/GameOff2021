@@ -11,9 +11,10 @@ namespace StageObject.DoorMechanic.Door
     {
         private Context<DoorController> context;
         [SerializeField] private DoorStateName initialDoorStateName;
-        [SerializeField] private Shader shader;
-
+        [SerializeField] private Animator animator;
+        
         [Watchable] private string CurrentState => context.CurrentStateName;
+        public Animator Animator => animator;
 
         private void Start()
         {
@@ -31,13 +32,6 @@ namespace StageObject.DoorMechanic.Door
             });
         }
         
-        public void SetupBrandColor(Color color)
-        {
-            MeshRenderer _meshRenderer = GetComponentInChildren<MeshRenderer>();
-            Material _material = new Material(shader) {color = color};
-            _meshRenderer.material = _material;
-        }
-
         public void SwitchState()
         {
             if (context.CurrentStateName == DoorStateName.Open.ToString())

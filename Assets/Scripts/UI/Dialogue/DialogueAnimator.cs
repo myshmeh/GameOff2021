@@ -27,14 +27,14 @@ namespace UI.Dialogue
             dialogueBoxUI.ClearNameAndCommand();
         }
 
-        public void Animate(float delaySeconds = .5f, float waitCommandSeconds = .5f, float waitResponseSeconds = 1f, Action afterAnimation = null)
+        public void Animate(float delaySeconds = .5f, float waitCommandSeconds = .5f, float waitResponseSeconds = 1f, float waitAtTheEndSeconds = 0f, float waitNextLetterSeconds = .1f, Action afterAnimation = null)
         {
             StopAllCoroutines();
             ClearUI();
-            StartCoroutine(DoAnimate(delaySeconds, waitCommandSeconds, waitResponseSeconds, afterAnimation));
+            StartCoroutine(DoAnimate(delaySeconds, waitCommandSeconds, waitResponseSeconds, waitAtTheEndSeconds, waitNextLetterSeconds, afterAnimation));
         }
 
-        public IEnumerator DoAnimate(float delaySeconds, float waitCommandSeconds, float waitResponseSeconds, Action afterAnimation)
+        public IEnumerator DoAnimate(float delaySeconds, float waitCommandSeconds, float waitResponseSeconds, float waitAtTheEndSeconds, float waitNextLetterSeconds, Action afterAnimation)
         {
             yield return new WaitForSeconds(delaySeconds);
             
@@ -46,7 +46,7 @@ namespace UI.Dialogue
             foreach (char _letter in commandLetters)
             {
                 dialogueBoxUI.AddToNameAndCommand(_letter);
-                yield return null;
+                yield return new WaitForSeconds(waitNextLetterSeconds);
             }
 
             foreach (var _response in dialogue.responses)
@@ -58,9 +58,11 @@ namespace UI.Dialogue
                 foreach (char _letter in _response)
                 {
                     dialogueBoxUI.AddToResponse(_letter);
-                    yield return null;
+                    yield return new WaitForSeconds(waitNextLetterSeconds);
                 }
             }
+
+            yield return new WaitForSeconds(waitAtTheEndSeconds);
 
             afterAnimation?.Invoke();
         }

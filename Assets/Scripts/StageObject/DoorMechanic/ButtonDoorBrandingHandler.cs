@@ -17,8 +17,8 @@ namespace StageObject.DoorMechanic
 
         void SetupBrandColor()
         {
-            buttons.ForEach(button => button.SetupBrandColor(brandColor));
-            doors.ForEach(door => door.SetupBrandColor(brandColor));
+            buttons.ForEach(button => BrandColor.SetupBrandColor(button, brandColor));
+            doors.ForEach(door => BrandColor.SetupBrandColor(door, brandColor));
         }
 
         void SetupButtonsNDoors()

@@ -159,7 +159,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6560
+  m_Name: pb_Mesh-1394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -338,14 +338,34 @@ PrefabInstance:
       objectReference: {fileID: 570431463}
     - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
       propertyPath: dialogue.responses.Array.size
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
       propertyPath: dialogue.responses.Array.data[0]
-      value: hi bug-1.32, how are you?
+      value: hi bug-1.32, how's your first shift?
       objectReference: {fileID: 0}
     - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
       propertyPath: dialogue.responses.Array.data[1]
+      value: as you already know, tech companies keep polluting our environment.
+      objectReference: {fileID: 0}
+    - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
+      propertyPath: dialogue.responses.Array.data[2]
+      value: we are having hard time surviving the species.
+      objectReference: {fileID: 0}
+    - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
+      propertyPath: dialogue.responses.Array.data[3]
+      value: our job, as a bug, is to eliminate them by cracking their servers completely.
+      objectReference: {fileID: 0}
+    - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
+      propertyPath: dialogue.responses.Array.data[4]
+      value: here at a small corp, i will walk you through how to do that.
+      objectReference: {fileID: 0}
+    - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
+      propertyPath: dialogue.responses.Array.data[5]
+      value: first - let's move around
+      objectReference: {fileID: 0}
+    - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
+      propertyPath: dialogue.responses.Array.data[6]
       value: press [W][A][S][D] to move. move a mouse for the camera control.
       objectReference: {fileID: 0}
     - target: {fileID: 782849735206837989, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
@@ -464,7 +484,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6622
+  m_Name: pb_Mesh-1456
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -475,8 +495,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.05, y: 0.05, z: -0.125}
+      m_Extent: {x: 0.05, y: 0.05, z: 0.125}
   m_Shapes:
     vertices: []
     shapes: []
@@ -968,7 +988,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5450437288339864438, guid: 1d60272b6747549dc9c0faac566f6941, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5450437288339864438, guid: 1d60272b6747549dc9c0faac566f6941, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1154,6 +1174,10 @@ PrefabInstance:
       propertyPath: dialogueBoxUI.nameAndCommand
       value: 
       objectReference: {fileID: 570431463}
+    - target: {fileID: 1209092120426770505, guid: da67f848ee00f4eeda57e89f6202c520, type: 3}
+      propertyPath: dialogue.responses.Array.data[1]
+      value: you completed all the trainings - now you're a real bug.
+      objectReference: {fileID: 0}
     - target: {fileID: 4131829351265287475, guid: da67f848ee00f4eeda57e89f6202c520, type: 3}
       propertyPath: m_Name
       value: TutorialStageManager
@@ -1802,7 +1826,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6536
+  m_Name: pb_Mesh-1370
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2070,7 +2094,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5450437288339864438, guid: 1d60272b6747549dc9c0faac566f6941, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5450437288339864438, guid: 1d60272b6747549dc9c0faac566f6941, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2181,7 +2205,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6814
+  m_Name: pb_Mesh-1636
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2574,7 +2598,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6610
+  m_Name: pb_Mesh-1444
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2585,8 +2609,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.05, y: 0.05, z: -0.125}
+      m_Extent: {x: 0.05, y: 0.05, z: 0.125}
   m_Shapes:
     vertices: []
     shapes: []
@@ -2875,12 +2899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
       propertyPath: dialogue.responses.Array.data[0]
-      value: this is a server - runs it systems and debuggers here.
+      value: this is a server - runs the company and the debuggers here.
       objectReference: {fileID: 0}
     - target: {fileID: 782849735206837985, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
       propertyPath: dialogue.responses.Array.data[1]
-      value: press [SPACE] to crack it. it will go down debuggers with the same color
-        as well.
+      value: press [SPACE] near it to crack.
       objectReference: {fileID: 0}
     - target: {fileID: 782849735206837989, guid: a83f7494158694e0285c9fa5a10f7c78, type: 3}
       propertyPath: freezePlayer
@@ -3216,7 +3239,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6486
+  m_Name: pb_Mesh-1306
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3410,7 +3433,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6548
+  m_Name: pb_Mesh-1382
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3655,7 +3678,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6598
+  m_Name: pb_Mesh-1432
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3666,8 +3689,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 0.25, y: 0.25, z: -0.25}
+      m_Extent: {x: 0.25, y: 0.25, z: 0.25}
   m_Shapes:
     vertices: []
     shapes: []
@@ -3819,7 +3842,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19798
+  m_Name: pb_Mesh16792
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4040,7 +4063,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6474
+  m_Name: pb_Mesh-1294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5764,7 +5787,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6498
+  m_Name: pb_Mesh-1318
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

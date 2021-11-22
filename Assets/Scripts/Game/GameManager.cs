@@ -44,7 +44,7 @@ namespace Game
 
         public void OnStageIntroCompleted()
         {
-            print("onstageintrocompleted called");
+            MoveToNextScene();
         }
 
         public void OnEndingCompleted()

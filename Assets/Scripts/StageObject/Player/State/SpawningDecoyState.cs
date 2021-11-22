@@ -26,23 +26,23 @@ namespace StageObject.Player.State
 
         IEnumerator SpawnDecoy()
         {
-            yield return new WaitForSeconds(spawnSeconds);
-            
             context.Client.ConsumeDecoyCount();
-            
+
             Transform decoy = context.Client.Decoy;
             Vector3 position = context.Client.transform.position;
             Transform playerModelRoot = context.Client.transform.GetChild(0);
             Quaternion quaternion = Quaternion.Euler(playerModelRoot.eulerAngles);
             var ins = GameObject.Instantiate(decoy, position, quaternion);
-            
+
             var controller = ins.GetComponent<DecoyController>();
             Vector3 meshForward = context.Client.transform.GetChild(0).forward;
-            controller.ThrowTo(meshForward);
+            controller.ThrowTo(meshForward, context.Client.crackableDistance);
 
             if (OnDecoySpawned != null)
                 OnDecoySpawned(controller);
 
+            yield return new WaitForSeconds(spawnSeconds);
+            
             context.PopState();
         }
         

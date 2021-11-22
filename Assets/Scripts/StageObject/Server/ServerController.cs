@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using MonoBehaviourWatcher;
 using StageObject.Debugger;
-using StageObject.Player.State;
-using UnityEditor;
 using UnityEngine;
 
 namespace StageObject.Server
@@ -13,24 +11,17 @@ namespace StageObject.Server
         [SerializeField] private float crackingSeconds = 5f;
         [SerializeField] private DebuggerController[] debuggers;
         [SerializeField] private Color primaryColor = Color.blue;
-        [SerializeField] private Shader shader;
+        [SerializeField] private ParticleSystem smokeParticle;
+        [SerializeField] private ParticleSystem explosionParticle;
 
         [Watchable] private bool cracked;
 
         public bool Cracked => cracked;
 
-        void SetColorToAppearance(Color color)
-        {
-            MeshRenderer _meshRenderer = GetComponentInChildren<MeshRenderer>();
-            Material newMaterial = new Material(shader);
-            newMaterial.color = color;
-            _meshRenderer.material = newMaterial;
-        }
-
-        private void Awake()
+         private void Awake()
         {
             cracked = false;
-            SetColorToAppearance(primaryColor);
+            BrandColor.SetupBrandColor(this, primaryColor);
             foreach (IClient d in debuggers)
             {
                 d.OnServerSetup(primaryColor);
@@ -49,12 +40,18 @@ namespace StageObject.Server
             yield return new WaitForSeconds(crackingSeconds);
 
             cracked = true;
-            SetColorToAppearance(Color.gray);
+            BrandColor.SetupBrandColor(this, Color.gray);
             afterCrack();
             foreach (IClient d in debuggers)
             {
                 d.OnServerDown();
             }
+            
+            smokeParticle.Play();
+            explosionParticle.Play();
+            var cameraShaker = CameraShaker.Instance;
+            if (cameraShaker != null)
+                cameraShaker.Shake(CameraShakeDuration.Middle, CameraShakeMagnitude.Medium);
         }
 
         private void OnDrawGizmos()

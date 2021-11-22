@@ -9,6 +9,7 @@ namespace StageObject.Player.State
         public DeadState(Context<PlayerController> context)
         {
             context.Client.TurnNonMovingModel(true);
+            context.Client.explosionParticle.Play();
         }
         
         public void Enter()

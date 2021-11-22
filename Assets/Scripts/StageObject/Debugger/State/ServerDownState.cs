@@ -8,7 +8,9 @@ namespace StageObject.Debugger.State
     {
         public ServerDownState(Context<DebuggerController> context)
         {
+            BrandColor.SetupBrandColor(context.Client, Color.white);
             context.Client.spotLight.color = Color.gray;
+            context.Client.smokeParticle.Play();
         }
         
         public void Enter()

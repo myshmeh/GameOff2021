@@ -14,6 +14,7 @@ namespace StageObject.Player
         public float crackableDistance = 1f;
         [SerializeField] private int maxDecoyCount = 3;
         [SerializeField] private Transform decoy;
+        public ParticleSystem explosionParticle;
 
         private Context<PlayerController> context;
         [Watchable] private int decoyCount;
@@ -97,6 +98,12 @@ namespace StageObject.Player
             moverRigidbody.velocity = Vector3.zero;
             moverRigidbody.angularVelocity = Vector3.zero;
             transform.GetChild(0).gameObject.SetActive(onoff);
+            
+            if (!onoff) return;
+            Transform nonMovingModel = transform.GetChild(1);
+            Transform movingModel = transform.GetChild(0);
+            movingModel.position = nonMovingModel.position;
+            movingModel.eulerAngles = nonMovingModel.eulerAngles;
         }
         
         public void TurnNonMovingModel(bool onoff)
@@ -105,6 +112,12 @@ namespace StageObject.Player
             moverRigidbody.velocity = Vector3.zero;
             moverRigidbody.angularVelocity = Vector3.zero;
             transform.GetChild(1).gameObject.SetActive(onoff);
+
+            if (!onoff) return;
+            Transform nonMovingModel = transform.GetChild(1);
+            Transform movingModel = transform.GetChild(0);
+            nonMovingModel.position = movingModel.position;
+            nonMovingModel.eulerAngles = movingModel.eulerAngles;
         }
     }
 }

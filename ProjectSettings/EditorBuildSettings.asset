@@ -9,27 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Production/1_Tutorial.unity
     guid: 276478f00232243fe8a0ae64bea8fac8
   - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: 55ef8ba2fdb4e4d2bb1f05d22203d77c
-  - enabled: 1
-    path: Assets/Scenes/Production/3_Stages/Nops/1_Tutorial.unity
-    guid: 4bc4463b99fac4293934fd8ce4fb42b4
-  - enabled: 1
-    path: Assets/Scenes/Production/3_Stages/Nops/2_Tutorial.unity
-    guid: b511931b0fe6e45659278ad051b0e984
-  - enabled: 1
-    path: Assets/Scenes/Production/3_Stages/Nops/3_Tutorial.unity
-    guid: 7b780fde6972a46ad9969071765577a3
+    path: Assets/Scenes/Production/2_StageIntro.unity
+    guid: 774029fc729df41f3adfdfb3973f00f2
   - enabled: 1
     path: Assets/Scenes/Production/3_Stages/4_Tutorial.unity
     guid: eeb78caf7b425400c9afdf8a9372355e
   - enabled: 1
-    path: Assets/Scenes/Production/3_Stages/Nops/5_Tutorial.unity
-    guid: 9224a9be8afea4ef9b9524489be84b73
-  - enabled: 1
     path: Assets/Scenes/Production/3_Stages/6_Challenging.unity
     guid: 672955c41326d4f55977d8f77c658132
   - enabled: 1
-    path: Assets/Scenes/Prototypes/Complete.unity
-    guid: ac6f8f967dc5d40b992a730fa0468764
+    path: Assets/Scenes/Production/5_Completed.unity
+    guid: 609138daad048434b9041f889612f4f7
   m_configObjects: {}

@@ -134,4 +134,7 @@ MonoBehaviour:
   delaySeconds: 0
   waitCommandSeconds: 0.25
   waitResponseSeconds: 0.5
+  waitAtTheEndSeconds: 1
+  waitNextLetterSeconds: 0.05
   targetTagName: Player
+  freezePlayer: 0
