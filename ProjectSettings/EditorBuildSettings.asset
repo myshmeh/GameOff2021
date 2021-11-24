@@ -6,21 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Production/1_Tutorial.unity
+    path: Assets/Scenes/Production/Tutorial.unity
     guid: 276478f00232243fe8a0ae64bea8fac8
   - enabled: 1
     path: Assets/Scenes/Production/StageIntros/StageIntro.unity
     guid: 774029fc729df41f3adfdfb3973f00f2
   - enabled: 1
-    path: Assets/Scenes/Production/Stages/4_Easy.unity
+    path: Assets/Scenes/Production/Stages/1_Easy.unity
     guid: eeb78caf7b425400c9afdf8a9372355e
   - enabled: 1
     path: Assets/Scenes/Production/StageIntros/StageIntro2.unity
     guid: 0d20fc367ca424be693c4364713ecfb1
   - enabled: 1
-    path: Assets/Scenes/Production/Stages/6_Challenging.unity
+    path: Assets/Scenes/Production/Stages/3_Challenging.unity
     guid: 672955c41326d4f55977d8f77c658132
   - enabled: 1
+    path: Assets/Scenes/Production/GameCompleted.unity
+    guid: 7a4ae3e4c76354838a8b6ed11d040629
+  - enabled: 0
     path: Assets/Scenes/Production/5_Completed.unity
     guid: 609138daad048434b9041f889612f4f7
   m_configObjects: {}
