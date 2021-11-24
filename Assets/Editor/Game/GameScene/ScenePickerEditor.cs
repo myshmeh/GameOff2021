@@ -1,9 +1,10 @@
+using Game.GameScene;
 using UnityEditor;
 
-namespace Game.GameScene
+namespace Editor.Game
 {
     [CustomEditor(typeof(ScenePicker), true)]
-    public class ScenePickerEditor : Editor
+    public class ScenePickerEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {

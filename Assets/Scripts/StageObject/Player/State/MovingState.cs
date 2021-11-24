@@ -45,7 +45,9 @@ namespace StageObject.Player.State
                     {
                         ServerController _serverController = hitInfo.collider.GetComponent<ServerController>();
                         if (_serverController == null) throw new Exception("ServerController not found");
-                        context.PushState(new CrackingState(context, _serverController));
+                        if (_serverController.Cracked) return;
+                        
+                        context.PushState(new CrackingState(context, _serverController, hitInfo.point, hitInfo.normal));
 
                         return;
                     }

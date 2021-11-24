@@ -2,7 +2,9 @@ using System;
 using MonoBehaviourWatcher;
 using StageObject.DoorMechanic.Door.State;
 using StateMachine.Context;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace StageObject.DoorMechanic.Door
@@ -39,7 +41,8 @@ namespace StageObject.DoorMechanic.Door
             else
                 context.PushState(new OpenState(context));
         }
-
+        
+        #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             Handles.color = Color.gray;
@@ -49,5 +52,6 @@ namespace StageObject.DoorMechanic.Door
             // else
             //     transform.position = new Vector3(transform.position.x, -1f, transform.position.z);
         }
+        #endif
     }
 }

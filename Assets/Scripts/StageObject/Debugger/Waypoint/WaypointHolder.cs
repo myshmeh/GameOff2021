@@ -1,14 +1,14 @@
-using System;
+using StageObject.Debugger;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.Networking;
-using UnityEngine.Rendering.VirtualTexturing;
 
-namespace StageObject.Debugger.Waypoint
+namespace Editor.StageObject.Debugger.Waypoint
 {
     public class WaypointHolder : MonoBehaviour
     {
+        #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             if (transform.childCount == 0) return;
@@ -28,5 +28,6 @@ namespace StageObject.Debugger.Waypoint
                 Gizmos.DrawLine(waypoint, nextWaypoint);
             }
         }
+        #endif
     }
 }

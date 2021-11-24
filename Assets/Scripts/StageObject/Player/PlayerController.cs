@@ -42,6 +42,7 @@ namespace StageObject.Player
         {
             moverRigidbody = GetComponent<Rigidbody>();
             advancedWalkerController = GetComponent<AdvancedWalkerController>();
+            decoyCount = maxDecoyCount;
         }
 
         private void Start()
@@ -54,8 +55,6 @@ namespace StageObject.Player
             context = new Context<PlayerController>(
                 this, 
                 ctx => new MovingState(ctx));
-
-            decoyCount = maxDecoyCount;
         }
 
         private void Update()
@@ -118,6 +117,29 @@ namespace StageObject.Player
             Transform movingModel = transform.GetChild(0);
             nonMovingModel.position = movingModel.position;
             nonMovingModel.eulerAngles = movingModel.eulerAngles;
+        }
+
+        public void TurnCrackingModel(bool onoff, Vector3 mountSurfacePoint, Vector3 mountSurfaceNormal)
+        {
+            advancedWalkerController.enabled = false;
+            moverRigidbody.velocity = Vector3.zero;
+            moverRigidbody.angularVelocity = Vector3.zero;
+            Transform _transform = transform.GetChild(2);
+            _transform.gameObject.SetActive(onoff);
+
+            if (!onoff) return;
+            _transform.position = mountSurfacePoint;
+            _transform.LookAt(mountSurfacePoint + mountSurfaceNormal);
+        }
+
+        public void TurnOnCrackingModel(Vector3 mountSurfacePoint, Vector3 mountSurfaceNormal)
+        {
+            TurnCrackingModel(true, mountSurfacePoint, mountSurfaceNormal);
+        }
+
+        public void TurnOffCrackingModel()
+        {
+            TurnCrackingModel(false, Vector3.zero, Vector3.zero);
         }
     }
 }

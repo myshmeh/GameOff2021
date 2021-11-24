@@ -9,8 +9,11 @@ namespace StageObject.Player.State
     public class CrackingState : IState
     {
         private Context<PlayerController> context;
+        private Vector3 mountSurfacePoint;
+        private Vector3 mountSurfaceNormal;
 
-        public CrackingState(Context<PlayerController> context, ServerController serverController)
+        public CrackingState(Context<PlayerController> context, ServerController serverController,
+            Vector3 mountSurfacePoint, Vector3 mountSurfaceNormal)
         {
             this.context = context;
             serverController.Crack(() =>
@@ -18,16 +21,22 @@ namespace StageObject.Player.State
                 context.Client.RechargeDecoy();
                 context.PopState();
             });
+
+            this.mountSurfaceNormal = mountSurfaceNormal;
+            this.mountSurfacePoint = mountSurfacePoint;
         }
-        
+
         public void Enter()
         {
             context.Client.TurnNonMovingModel(true);
+            context.Client.TurnNonMovingModel(false);
+            context.Client.TurnOnCrackingModel(mountSurfacePoint, mountSurfaceNormal);
         }
 
         public void Exit()
         {
             context.Client.TurnNonMovingModel(false);
+            context.Client.TurnOffCrackingModel();
         }
 
         public void HandleInput()

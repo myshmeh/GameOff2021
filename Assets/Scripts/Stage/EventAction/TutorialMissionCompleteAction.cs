@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using Game;
+using UI.BlackRect;
 using UI.Dialogue;
 using UI.Title;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Stage.EventAction
 {
@@ -12,6 +14,7 @@ namespace Stage.EventAction
         [SerializeField] private DialogueAnimator dialogueAnimator;
         [SerializeField] private DialogueBoxAnimator dialogueBoxAnimator;
         [SerializeField] private TitleAnimator titleAnimator;
+        [SerializeField] private BlackRectAnimator blackRectAnimator;
         
         private void Start()
         {
@@ -26,7 +29,11 @@ namespace Stage.EventAction
 
             titleAnimator.Show();
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2.5f);
+            
+            blackRectAnimator.FadeOut();
+            
+            yield return new WaitForSeconds(1.5f);
 
             GameManager.Instance.OnStageCompleted();
         }

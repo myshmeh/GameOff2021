@@ -8,7 +8,7 @@ namespace CMF
 {
 	//This editor script displays some additional information in the mover inspector, like a preview of the current raycast array;
 	[CustomEditor(typeof(Mover))]
-	public class MoverInspector : Editor {
+	public class MoverInspector : UnityEditor.Editor {
 
 		private Mover mover;
 

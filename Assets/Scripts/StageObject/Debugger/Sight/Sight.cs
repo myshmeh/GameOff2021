@@ -1,5 +1,6 @@
-using System;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace StageObject.Debugger.Sight
@@ -11,7 +12,8 @@ namespace StageObject.Debugger.Sight
 
         public float SightDistance => sightDistance;
         public float Angle => angle;
-
+        
+        #if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             Handles.color = Color.green;
@@ -22,5 +24,6 @@ namespace StageObject.Debugger.Sight
             Handles.DrawWireArc(transform.position, Vector3.up, arcStartVector, angle, sightDistance);
             Handles.DrawLine(transform.position, transform.position + Vector3.forward * sightDistance);
         }
+        #endif
     }
 }

@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using Game.GameScene;
 using UnityEditor;
 using UnityEngine;
 
-namespace Game.GameScene
+namespace Editor.Game
 {
     [CustomEditor(typeof(GameScenes), true)]
-    public class GameScenesEditor : Editor
+    public class GameScenesEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {

@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace UI.Dialogue
 {
     public class DialogueAnimator : MonoBehaviour
     {
+        private static List<DialogueAnimator> instances = new List<DialogueAnimator>();
+        
         [SerializeField] private Dialogue dialogue;
         [SerializeField] private DialogueBoxUI dialogueBoxUI;
 
@@ -19,6 +22,8 @@ namespace UI.Dialogue
             commandLetters = dialogue.command.ToCharArray();
             bossNameLetters = dialogue.bossName.ToCharArray();
             ClearUI();
+            
+            instances.Add(this);
         }
 
         void ClearUI()
@@ -27,9 +32,17 @@ namespace UI.Dialogue
             dialogueBoxUI.ClearNameAndCommand();
         }
 
-        public void Animate(float delaySeconds = .5f, float waitCommandSeconds = .5f, float waitResponseSeconds = 1f, float waitAtTheEndSeconds = 0f, float waitNextLetterSeconds = .1f, Action afterAnimation = null)
+        void StopAllInstancesCoroutines()
         {
-            StopAllCoroutines();
+            foreach (var _instance in instances)
+            {
+                _instance.StopAllCoroutines();
+            }
+        }
+
+        public void Animate(float delaySeconds = .5f, float waitCommandSeconds = .5f, float waitResponseSeconds = 1f, float waitAtTheEndSeconds = 0f, float waitNextLetterSeconds = .025f, Action afterAnimation = null)
+        {
+            StopAllInstancesCoroutines();
             ClearUI();
             StartCoroutine(DoAnimate(delaySeconds, waitCommandSeconds, waitResponseSeconds, waitAtTheEndSeconds, waitNextLetterSeconds, afterAnimation));
         }
@@ -65,6 +78,11 @@ namespace UI.Dialogue
             yield return new WaitForSeconds(waitAtTheEndSeconds);
 
             afterAnimation?.Invoke();
+        }
+
+        private void OnDestroy()
+        {
+            instances.Remove(this);
         }
     }
 }

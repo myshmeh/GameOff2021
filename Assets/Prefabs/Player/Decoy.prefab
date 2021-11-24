@@ -59,10 +59,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96732c212d3c4f638edcb4fd0d019ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
   vanishWaitSeconds: 0.5
   explosionParticle: {fileID: 4863106857608188239}
   meshObject: {fileID: 63355191936461685}
+  throwingAnimationWaitSeconds: 0.025
 --- !u!1 &63355191936461685
 GameObject:
   m_ObjectHideFlags: 0

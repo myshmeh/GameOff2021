@@ -82,10 +82,10 @@ Material:
     - _UVSec: 0
     - _UsesFresnelLight: 0
     - _UsesSpecularLight: 0
-    - _YScale: 1
+    - _YScale: 1.8
     - _ZWrite: 1
     m_Colors:
-    - _AmbientLightColor: {r: 0.5278032, g: 0.5278032, b: 0.5278032, a: 1}
+    - _AmbientLightColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
