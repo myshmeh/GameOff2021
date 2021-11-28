@@ -22,6 +22,8 @@ namespace StageObject.Debugger
         public float rechargeSeconds = 5f;
         public Transform attackParticlesParent;
         public ParticleSystem smokeParticle;
+        public DebuggerAnimator animator;
+        public AudioSource laserAudioSources;
 
         private Context<DebuggerController> context;
         private Color primaryColor = Color.white;

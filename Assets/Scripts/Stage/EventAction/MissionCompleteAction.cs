@@ -11,12 +11,15 @@ namespace Stage.EventAction
         [SerializeField] private DialogueAnimator dialogueAnimator;
         private DialogueBoxAnimator dialogueBoxAnimator;
         private BlackRectAnimator blackRectAnimator;
+
+        private BGM bgm;
         
         private void Start()
         {
             StageManager.OnMissionComplete += OnMissionComplete;
             blackRectAnimator = FindObjectOfType<BlackRectAnimator>();
             dialogueBoxAnimator = FindObjectOfType<DialogueBoxAnimator>();
+            bgm = FindObjectOfType<BGM>();
         }
 
         IEnumerator DoOnMissionComplete()
@@ -32,6 +35,8 @@ namespace Stage.EventAction
             yield return new WaitForSeconds(6f);
             
             blackRectAnimator.FadeOut();
+            
+            if (bgm != null) bgm.FadeOut();
             
             yield return new WaitForSeconds(1.5f);
 

@@ -14,6 +14,8 @@ namespace StageObject.DoorMechanic.Door
         private Context<DoorController> context;
         [SerializeField] private DoorStateName initialDoorStateName;
         [SerializeField] private Animator animator;
+        [SerializeField] private AudioSource doorMovingAudioSource;
+        [SerializeField] private float doorMovingAudioDelaySeconds = .3f;
         
         [Watchable] private string CurrentState => context.CurrentStateName;
         public Animator Animator => animator;
@@ -40,6 +42,8 @@ namespace StageObject.DoorMechanic.Door
                 context.PushState(new CloseState(context));
             else
                 context.PushState(new OpenState(context));
+            
+            doorMovingAudioSource.PlayDelayed(doorMovingAudioDelaySeconds);
         }
         
         #if UNITY_EDITOR
@@ -47,10 +51,6 @@ namespace StageObject.DoorMechanic.Door
         {
             Handles.color = Color.gray;
             Handles.Label(transform.position, initialDoorStateName.ToString());
-            // if (initialDoorStateName == DoorStateName.Open)
-            //     transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
-            // else
-            //     transform.position = new Vector3(transform.position.x, -1f, transform.position.z);
         }
         #endif
     }

@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: FillingCube
   m_Shader: {fileID: 4800000, guid: 5084d3a412c64401850d957ada3e665f, type: 3}
-  m_ShaderKeywords: _USESFRESNELLIGHT_ON _USESSPECULARLIGHT_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -80,8 +80,8 @@ Material:
     - _SpecularLightGradientStrength: 0.01
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UsesFresnelLight: 1
-    - _UsesSpecularLight: 1
+    - _UsesFresnelLight: 0
+    - _UsesSpecularLight: 0
     - _YScale: 1.5
     - _ZWrite: 1
     m_Colors:

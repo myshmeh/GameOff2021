@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ec11ee8e977524ebba52f9f25bd9e8, type: 3}
+  m_Name: Bug
+  m_EditorClassIdentifier: 
+  boneInitializeData:
+  - name: Hips
+    parentName: 
+    position: {x: 0, y: 0.06, z: -0.015}
+    disablePositionAnimation: 0
+    disableRotationAnimation: 0
+    disableScaleAnimation: 0
+    mirrorSetBoneAnimation: 0
+    mirrorSetBonePosition: 0
+    mirrorSetBoneWeight: 0
+  - name: Head
+    parentName: Hips
+    position: {x: 0, y: 0, z: 0.03}
+    disablePositionAnimation: 0
+    disableRotationAnimation: 0
+    disableScaleAnimation: 0
+    mirrorSetBoneAnimation: 0
+    mirrorSetBonePosition: 0
+    mirrorSetBoneWeight: 0
+  - name: LeftRearThigh
+    parentName: Hips
+    position: {x: 0.12, y: 0, z: -0.06}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: LeftRearLeg
+    parentName: LeftRearThigh
+    position: {x: 0.044999998, y: -0.044999998, z: 0}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: LeftRearFoot
+    parentName: LeftRearLeg
+    position: {x: 0, y: 0, z: -0.05999999}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RightRearThigh
+    parentName: Hips
+    position: {x: -0.12, y: 0, z: -0.06}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RightRearLeg
+    parentName: RightRearThigh
+    position: {x: -0.044999998, y: -0.044999998, z: 0}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RightRearFoot
+    parentName: RightRearLeg
+    position: {x: 0, y: 0, z: -0.05999999}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: LeftMiddleThigh
+    parentName: Hips
+    position: {x: 0.12, y: 0, z: 0.03}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: LeftMiddleLeg
+    parentName: LeftMiddleThigh
+    position: {x: 0.044999998, y: -0.044999998, z: 0.03}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: LeftMiddleFoot
+    parentName: LeftMiddleLeg
+    position: {x: 0, y: 0, z: -0.06}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RightMiddleThigh
+    parentName: Hips
+    position: {x: -0.12, y: 0, z: 0.03}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RightMiddleLeg
+    parentName: RightMiddleThigh
+    position: {x: -0.044999998, y: -0.044999998, z: 0.03}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RightMiddleFoot
+    parentName: RightMiddleLeg
+    position: {x: 0, y: 0, z: -0.06}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: LeftFrontThigh
+    parentName: Hips
+    position: {x: 0.12, y: 0, z: 0.089999996}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: LeftFrontLeg
+    parentName: LeftFrontThigh
+    position: {x: 0.015, y: -0.044999998, z: 0.03}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: LeftFrontFoot
+    parentName: LeftFrontLeg
+    position: {x: -0.03, y: 0, z: 0}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RightFrontThigh
+    parentName: Hips
+    position: {x: -0.12, y: 0, z: 0.089999996}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RightFrontLeg
+    parentName: RightFrontThigh
+    position: {x: -0.015, y: -0.044999998, z: 0.03}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1
+  - name: RighttFrontFoot
+    parentName: RightFrontLeg
+    position: {x: -0.03, y: 0, z: 0}
+    disablePositionAnimation: 1
+    disableRotationAnimation: 0
+    disableScaleAnimation: 1
+    mirrorSetBoneAnimation: 1
+    mirrorSetBonePosition: 1
+    mirrorSetBoneWeight: 1

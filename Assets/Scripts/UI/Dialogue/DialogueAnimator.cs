@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace UI.Dialogue
 {
@@ -11,6 +12,8 @@ namespace UI.Dialogue
         
         [SerializeField] private Dialogue dialogue;
         [SerializeField] private DialogueBoxUI dialogueBoxUI;
+        [SerializeField] private AudioSource letterAudioSource;
+        [SerializeField] private AudioSource requestAudioSource;
 
         private char[] nameLetters;
         private char[] commandLetters;
@@ -58,6 +61,7 @@ namespace UI.Dialogue
             
             foreach (char _letter in commandLetters)
             {
+                requestAudioSource.Play();
                 dialogueBoxUI.AddToNameAndCommand(_letter);
                 yield return new WaitForSeconds(waitNextLetterSeconds);
             }
@@ -70,6 +74,8 @@ namespace UI.Dialogue
                 
                 foreach (char _letter in _response)
                 {
+                    letterAudioSource.Play();
+                    letterAudioSource.pitch = Random.Range(1f, 1.25f);
                     dialogueBoxUI.AddToResponse(_letter);
                     yield return new WaitForSeconds(waitNextLetterSeconds);
                 }

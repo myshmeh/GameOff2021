@@ -45,8 +45,16 @@ namespace StageObject.Debugger.State
         public void Enter()
         {
             if (moveAlongPathsCoroutine != null) return;
-
+            
+            if (IsMovingPatrolStyle()) context.Client.animator.Move();
+            else context.Client.animator.Idle();
+            
             moveAlongPathsCoroutine = context.Client.StartCoroutine(MoveAlongPaths());
+        }
+
+        private bool IsMovingPatrolStyle()
+        {
+            return waypoints.Length > 1;
         }
 
         bool CollideWithDoor(Vector3 positionToMove)
@@ -84,6 +92,7 @@ namespace StageObject.Debugger.State
 
         public void Exit()
         {
+            context.Client.animator.Idle();
         }
 
         public void HandleInput()

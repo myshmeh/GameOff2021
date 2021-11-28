@@ -1,4 +1,3 @@
-using System;
 using CMF;
 using MonoBehaviourWatcher;
 using Stage;
@@ -15,6 +14,12 @@ namespace StageObject.Player
         [SerializeField] private int maxDecoyCount = 3;
         [SerializeField] private Transform decoy;
         public ParticleSystem explosionParticle;
+        public PlayerAnimator animator;
+        public AudioSource movingAudioSource;
+        public AudioSource explosionAudioSource;
+        public AudioSource throwingAudioSource;
+        public AudioSource crackingAudioSource;
+        public AudioSource attachingAudioSource;
 
         private Context<PlayerController> context;
         [Watchable] private int decoyCount;

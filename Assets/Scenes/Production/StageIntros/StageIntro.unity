@@ -877,6 +877,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4352121710216901569, guid: 84c83fc6114e14b7da0eafed35e9d01f, type: 2}
     - target: {fileID: 4247441928452511563, guid: 0e3250c4e2ea04da28716f04af77abf6, type: 3}
+      propertyPath: m_text
+      value: 2nd shift
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247441928452511563, guid: 0e3250c4e2ea04da28716f04af77abf6, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

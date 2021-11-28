@@ -10,15 +10,20 @@ namespace Stage.EventAction
     {
         [SerializeField] private DialogueAnimator dialogueAnimator;
         [SerializeField] private BlackRectAnimator blackRectAnimator;
+
+        private BGM bgm;
         
         private void Start()
         {
             StageManager.OnMissionFailed += OnMissionFailed;
+            bgm = FindObjectOfType<BGM>();
         }
 
         IEnumerator DoAfterDialogueAnimation()
         {
             blackRectAnimator.FadeOut();
+            
+            if (bgm != null) bgm.FadeOut();
 
             yield return new WaitForSeconds(1.5f);
             

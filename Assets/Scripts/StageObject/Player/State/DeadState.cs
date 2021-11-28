@@ -10,6 +10,7 @@ namespace StageObject.Player.State
         {
             context.Client.TurnNonMovingModel(true);
             context.Client.explosionParticle.Play();
+            context.Client.explosionAudioSource.Play();
         }
         
         public void Enter()

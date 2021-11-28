@@ -11,6 +11,7 @@ namespace StageObject.Decoy
         [SerializeField] private TextMeshPro text;
         [SerializeField] private float textVisibleSeconds = 1f;
         [SerializeField] private string prefix = "decoyX";
+        [SerializeField] private AudioSource countAudioSource;
         private PlayerController playerController;
         private int previousCount;
 
@@ -37,6 +38,7 @@ namespace StageObject.Decoy
             yield return new WaitForSeconds(textVisibleSeconds * .2f);
 
             UpdateText(newCount);
+            countAudioSource.Play();
 
             yield return new WaitForSeconds(textVisibleSeconds * .8f);
 

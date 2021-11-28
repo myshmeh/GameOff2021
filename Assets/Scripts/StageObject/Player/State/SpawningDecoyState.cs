@@ -26,6 +26,8 @@ namespace StageObject.Player.State
 
         IEnumerator SpawnDecoy()
         {
+            context.Client.throwingAudioSource.Play();
+            
             context.Client.ConsumeDecoyCount();
 
             Transform decoy = context.Client.Decoy;

@@ -46,8 +46,7 @@ namespace StageObject.Debugger.State.Attack
             // smoke fx
             context.Client.smokeParticle.Play();
             // color blink fx
-            var _meshRenderer = context.Client.GetComponentInChildren<MeshRenderer>();
-            Color _color = _meshRenderer.material.color;
+            Color _color = BrandColor.GetBrandColor(context.Client);
             BrandColor.SetupBrandColor(context.Client, Color.gray);
             int blinkCount = 100;
             for (int i = 0; i < blinkCount; i++)
@@ -74,6 +73,8 @@ namespace StageObject.Debugger.State.Attack
             {
                 particle.Play();
             }
+            
+            context.Client.laserAudioSources.Play();
         }
         
         public void Enter()
@@ -86,6 +87,7 @@ namespace StageObject.Debugger.State.Attack
 
         public void Exit()
         {
+            context.Client.animator.Move();
         }
 
         public void HandleInput()

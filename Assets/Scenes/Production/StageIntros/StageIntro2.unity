@@ -931,7 +931,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4247441928452511563, guid: 0e3250c4e2ea04da28716f04af77abf6, type: 3}
       propertyPath: m_text
-      value: 2nd shift
+      value: 3rd shift
       objectReference: {fileID: 0}
     - target: {fileID: 4247441929040716700, guid: 0e3250c4e2ea04da28716f04af77abf6, type: 3}
       propertyPath: m_RootOrder

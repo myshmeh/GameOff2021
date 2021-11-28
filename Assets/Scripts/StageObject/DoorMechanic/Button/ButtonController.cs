@@ -9,7 +9,7 @@ namespace StageObject.DoorMechanic.Button
     public class ButtonController : MonoBehaviour
     {
         private Context<ButtonController> context;
-        [SerializeField] private Shader shader;
+        [SerializeField] private AudioSource buttonPressedAudioSource;
 
         [Watchable] private string CurrentState => context.CurrentStateName;
 
@@ -43,6 +43,7 @@ namespace StageObject.DoorMechanic.Button
         private void OnTriggerEnter(Collider other)
         {
             if (!PlayerTagName(other)) return;
+            buttonPressedAudioSource.Play();
             UnpressedToPushState();
         }
 

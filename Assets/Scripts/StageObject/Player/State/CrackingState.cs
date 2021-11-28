@@ -20,6 +20,7 @@ namespace StageObject.Player.State
             {
                 context.Client.RechargeDecoy();
                 context.PopState();
+                context.Client.crackingAudioSource.Stop();
             });
 
             this.mountSurfaceNormal = mountSurfaceNormal;
@@ -31,6 +32,9 @@ namespace StageObject.Player.State
             context.Client.TurnNonMovingModel(true);
             context.Client.TurnNonMovingModel(false);
             context.Client.TurnOnCrackingModel(mountSurfacePoint, mountSurfaceNormal);
+            
+            context.Client.attachingAudioSource.Play();
+            context.Client.crackingAudioSource.PlayDelayed(.1f);
         }
 
         public void Exit()

@@ -13,6 +13,7 @@ namespace StageObject.Server
         [SerializeField] private Color primaryColor = Color.blue;
         [SerializeField] private ParticleSystem smokeParticle;
         [SerializeField] private ParticleSystem explosionParticle;
+        [SerializeField] private AudioSource explosionAudioSource;
 
         [Watchable] private bool cracked;
 
@@ -49,6 +50,7 @@ namespace StageObject.Server
             
             smokeParticle.Play();
             explosionParticle.Play();
+            explosionAudioSource.Play();
             var cameraShaker = CameraShaker.Instance;
             if (cameraShaker != null)
                 cameraShaker.Shake(CameraShakeDuration.Middle, CameraShakeMagnitude.Medium);
