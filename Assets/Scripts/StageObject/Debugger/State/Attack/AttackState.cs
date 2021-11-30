@@ -48,16 +48,19 @@ namespace StageObject.Debugger.State.Attack
             // color blink fx
             Color _color = BrandColor.GetBrandColor(context.Client);
             BrandColor.SetupBrandColor(context.Client, Color.gray);
+            context.Client.spotLight.color = Color.gray;
             int blinkCount = 100;
             for (int i = 0; i < blinkCount; i++)
             {
                 Color temporaryColor = Random.Range(0, 2) == 0 ? _color : Color.gray;
                 BrandColor.SetupBrandColor(context.Client, temporaryColor);
+                context.Client.spotLight.color = temporaryColor;
                 yield return new WaitForSeconds(context.Client.rechargeSeconds / blinkCount);    
             }
             
             // bring back states
             BrandColor.SetupBrandColor(context.Client, _color);
+            context.Client.spotLight.color = _color;
             context.Client.smokeParticle.Stop();
 
             context.PopState();
@@ -79,8 +82,6 @@ namespace StageObject.Debugger.State.Attack
         
         public void Enter()
         {
-            context.Client.spotLight.color = Color.gray;
-            
             target.OnAttack();
             context.Client.StartCoroutine(Attack());
         }

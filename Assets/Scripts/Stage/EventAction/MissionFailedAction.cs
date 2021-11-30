@@ -33,7 +33,7 @@ namespace Stage.EventAction
             
             dialogueAnimator.Animate(0f, .5f, .5f);
 
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(4.5f);
             
             blackRectAnimator.FadeOut();
             

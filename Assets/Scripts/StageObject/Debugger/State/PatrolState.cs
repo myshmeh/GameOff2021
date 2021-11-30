@@ -157,20 +157,14 @@ namespace StageObject.Debugger.State
             Transform visibleDecoy;
             if ((visibleDecoy = GetVisibleDecoyTransform()) != null)
             {
-                spotLight.color = Color.blue;
                 IState attackState = new AttackState(context, visibleDecoy);
                 context.PushState(attackState);
             }
             else if (CanSeePlayer())
             {
-                spotLight.color = Color.yellow;
                 IState attackState = new AttackState(context, player);
                 context.PushState(attackState);
                 OnPlayerFoundSafely();
-            }
-            else
-            {
-                spotLight.color = context.Client.PrimaryColor;
             }
         }
 

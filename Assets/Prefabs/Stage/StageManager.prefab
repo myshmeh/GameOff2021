@@ -116,7 +116,7 @@ MonoBehaviour:
     command: report mission-failed
     bossName: boss
     responses:
-    - RIP, bug-1.32..
+    - rest in peace, bug-1.32..
   dialogueBoxUI:
     nameAndCommand: {fileID: 0}
     responses: {fileID: 0}
@@ -134,7 +134,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 58636988af8c74a81884ec5b7aa9f0e2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1.25
   Loop: 0
   Mute: 0
@@ -230,7 +230,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e515c90f7b7a4c6fb1ca29b48b98465, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 0
   Mute: 0

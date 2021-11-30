@@ -5023,7 +5023,7 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 1
-  editMode: 0
+  editMode: 1
   editLastMode: 0
   edit_voxelMode: 1
   edit_voxelWeightMode: 0

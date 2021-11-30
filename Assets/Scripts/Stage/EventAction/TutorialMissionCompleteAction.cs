@@ -3,9 +3,7 @@ using System.Collections;
 using Game;
 using UI.BlackRect;
 using UI.Dialogue;
-using UI.Title;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Stage.EventAction
 {
@@ -13,12 +11,10 @@ namespace Stage.EventAction
     {
         [SerializeField] private DialogueAnimator dialogueAnimator;
         [SerializeField] private DialogueBoxAnimator dialogueBoxAnimator;
-        [SerializeField] private TitleAnimator titleAnimator;
         [SerializeField] private BlackRectAnimator blackRectAnimator;
         [SerializeField] private float waitResponseSeconds = 2.5f;
         [SerializeField] private float waitAtTheEndSeconds = 2.5f;
-        [SerializeField] private float titleDisplayDelaySeconds = 1f;
-        [SerializeField] private float titleDisplaySeconds = 4f;
+        [SerializeField] private float waitUntilFadeOutSeconds = 1f;
         [SerializeField] private float fadeOutSeconds = 1.5f;
 
         private BGM bgm;
@@ -33,12 +29,8 @@ namespace Stage.EventAction
         {
             dialogueBoxAnimator.Hide();
 
-            yield return new WaitForSeconds(titleDisplayDelaySeconds);
+            yield return new WaitForSeconds(waitUntilFadeOutSeconds);
 
-            titleAnimator.Show();
-
-            yield return new WaitForSeconds(titleDisplaySeconds);
-            
             blackRectAnimator.FadeOut();
             
             if (bgm != null) bgm.FadeOut();
