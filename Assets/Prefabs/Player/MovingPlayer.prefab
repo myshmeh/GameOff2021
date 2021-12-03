@@ -100,7 +100,7 @@ MonoBehaviour:
   mouseVerticalAxis: Mouse Y
   invertHorizontalInput: 0
   invertVerticalInput: 0
-  mouseInputMultiplier: 0.01
+  mouseInputMultiplier: 0.002
 --- !u!1 &968877749229912300
 GameObject:
   m_ObjectHideFlags: 0
